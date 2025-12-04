@@ -1,0 +1,21 @@
+app-id: com.pens.Pomodoro
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: pomodoro.py
+finish-args:
+  # Windowing system access
+  - --socket=wayland
+  - --socket=fallback-x11
+  # Audio access (important for the beep/alert sound)
+  - --socket=pulseaudio
+  
+modules:
+  - name: pomodoro
+    sources:
+      - type: file
+        path: pomodoro.py
+    buildsystem: simple
+    build-commands:
+      - install -D pomodoro.py /app/bin/pomodoro.py
+      - chmod +x /app/bin/pomodoro.py

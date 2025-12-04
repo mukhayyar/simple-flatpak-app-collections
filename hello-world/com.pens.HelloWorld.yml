@@ -1,0 +1,25 @@
+app-id: com.pens.HelloWorld
+# We switched to the GNOME runtime because it includes Python + GTK out of the box.
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: hello.py
+finish-args:
+  # REQUIRED: Access to the windowing system to draw the GUI
+  - --socket=wayland
+  - --socket=fallback-x11
+  # Audio access (good to have for GUI apps)
+  - --socket=pulseaudio
+  # Network access
+  - --share=network
+
+modules:
+  - name: hello-app
+    sources:
+      - type: file
+        path: hello.py
+    buildsystem: simple
+    build-commands:
+      # Install the script to /app/bin/
+      - install -D hello.py /app/bin/hello.py
+      - chmod +x /app/bin/hello.py

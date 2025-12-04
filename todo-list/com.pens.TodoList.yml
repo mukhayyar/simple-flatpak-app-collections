@@ -1,0 +1,21 @@
+app-id: com.pens.TodoList
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: todo-list.py
+finish-args:
+  # Windowing system
+  - --socket=wayland
+  - --socket=fallback-x11
+  # We don't need network or audio.
+  # Filesystem access is handled automatically for the app's own data directory.
+
+modules:
+  - name: todo
+    sources:
+      - type: file
+        path: todo-list.py
+    buildsystem: simple
+    build-commands:
+      - install -D todo-list.py /app/bin/todo-list.py
+      - chmod +x /app/bin/todo-list.py

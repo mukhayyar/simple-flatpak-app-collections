@@ -1,0 +1,30 @@
+{
+  "id" : "com.pens.DigitalClock",
+  "runtime" : "org.gnome.Platform",
+  "runtime-version" : "45",
+  "runtime-commit" : "4f6999b80e1e0baab5a0b22b3b325545d33585c5b94122ce43eb5ae791830a34",
+  "sdk" : "org.gnome.Sdk",
+  "sdk-commit" : "9be6d7c9cb33864ba2e353c4c199545fcc9fdea838165338e8f316a92513bc4c",
+  "command" : "digital_clock.py",
+  "modules" : [
+    {
+      "name" : "digital-clock",
+      "buildsystem" : "simple",
+      "sources" : [
+        {
+          "path" : "digital_clock.py",
+          "type" : "file"
+        }
+      ],
+      "build-commands" : [
+        "install -D digital_clock.py /app/bin/digital_clock.py",
+        "chmod +x /app/bin/digital_clock.py"
+      ]
+    }
+  ],
+  "finish-args" : [
+    "--socket=wayland",
+    "--socket=fallback-x11"
+  ],
+  "source-date-epoch" : 1764846370
+}

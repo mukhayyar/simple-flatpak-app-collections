@@ -1,0 +1,22 @@
+app-id: com.pens.Calculator
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: calculator.py
+finish-args:
+  # Windowing system access
+  - --socket=wayland
+  - --socket=fallback-x11
+  # Audio access (optional, but standard for GUI apps)
+  - --socket=pulseaudio
+  # No network needed for a simple calculator, so we removed --share=network
+
+modules:
+  - name: calculator
+    sources:
+      - type: file
+        path: calculator.py
+    buildsystem: simple
+    build-commands:
+      - install -D calculator.py /app/bin/calculator.py
+      - chmod +x /app/bin/calculator.py

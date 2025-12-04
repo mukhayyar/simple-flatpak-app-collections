@@ -1,0 +1,8 @@
+[Application]
+name=com.pens.Pomodoro
+runtime=org.gnome.Platform/x86_64/45
+sdk=org.gnome.Sdk/x86_64/45
+command=pomodoro.py
+
+[Context]
+sockets=x11;wayland;pulseaudio;fallback-x11;

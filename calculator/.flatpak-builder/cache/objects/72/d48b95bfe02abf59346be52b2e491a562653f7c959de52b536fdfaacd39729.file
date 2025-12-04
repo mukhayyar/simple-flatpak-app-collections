@@ -1,0 +1,31 @@
+{
+  "id" : "com.pens.Calculator",
+  "runtime" : "org.gnome.Platform",
+  "runtime-version" : "45",
+  "runtime-commit" : "4f6999b80e1e0baab5a0b22b3b325545d33585c5b94122ce43eb5ae791830a34",
+  "sdk" : "org.gnome.Sdk",
+  "sdk-commit" : "9be6d7c9cb33864ba2e353c4c199545fcc9fdea838165338e8f316a92513bc4c",
+  "command" : "calculator.py",
+  "modules" : [
+    {
+      "name" : "calculator",
+      "buildsystem" : "simple",
+      "sources" : [
+        {
+          "path" : "calculator.py",
+          "type" : "file"
+        }
+      ],
+      "build-commands" : [
+        "install -D calculator.py /app/bin/calculator.py",
+        "chmod +x /app/bin/calculator.py"
+      ]
+    }
+  ],
+  "finish-args" : [
+    "--socket=wayland",
+    "--socket=fallback-x11",
+    "--socket=pulseaudio"
+  ],
+  "source-date-epoch" : 1764846157
+}

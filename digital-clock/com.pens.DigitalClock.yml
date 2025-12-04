@@ -1,0 +1,20 @@
+app-id: com.pens.DigitalClock
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: digital_clock.py
+finish-args:
+  # Windowing system access
+  - --socket=wayland
+  - --socket=fallback-x11
+  # We don't need network or audio for a simple clock
+  
+modules:
+  - name: digital-clock
+    sources:
+      - type: file
+        path: digital_clock.py
+    buildsystem: simple
+    build-commands:
+      - install -D digital_clock.py /app/bin/digital_clock.py
+      - chmod +x /app/bin/digital_clock.py
