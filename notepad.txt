@@ -1,0 +1,3 @@
+- Revocation mechanism untuk gpg yang lifetimenya expired
+- A CRL Distribution Point (CDP) is a network location (like a URL or LDAP path) specified in a digital certificate, telling users where to find the Certificate Revocation List (CRL) to check if that certificate has been revoked
+- 
