@@ -2,11 +2,11 @@
 
 # --- KONFIGURASI SERVER ---
 # URL API Flat-manager (Port 8080) - Tanpa nama repo di belakangnya
-SERVER_API_URL="http://172.21.164.231:8080"
+SERVER_API_URL="https://hub.agl-store.cyou"
 REPO_NAME="stable"
 
 # Token Admin Anda
-export REPO_TOKEN="generate_your_admin_token_here"
+export REPO_TOKEN="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidWlsZCIsInNjb3BlIjpbImJ1aWxkIiwidXBsb2FkIl0sIm5hbWUiOiJkZXZlbG9wZXIiLCJwcmVmaXhlcyI6WyJjb20ucGVucy5Ub2RvTGlzdCJdLCJyZXBvcyI6WyJzdGFibGUiXSwiZXhwIjoxODAwMjk3NjA0LCJ0b2tlbl90eXBlIjoiYXBwIiwiYnJhbmNoZXMiOlsic3RhYmxlIl19.jRariNbV3KgCi75KM42ARIZCLRFSRwXJUMt-uISu8Z8"
 
 # --- KONFIGURASI APLIKASI ---
 APP_ID="com.pens.TodoList"

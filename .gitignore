@@ -1,0 +1,5 @@
+# Flatpak build artifacts
+.flatpak-builder/
+flatpak_build/
+flatpak_repo/
+repo_temp/

@@ -2,11 +2,11 @@
 
 # --- KONFIGURASI SERVER ---
 # URL API Flat-manager (Port 8080) - Tanpa nama repo di belakangnya
-SERVER_API_URL="http://172.21.164.231:8080"
+SERVER_API_URL="https://hub.agl-store.cyou/"
 REPO_NAME="stable"
 
 # Token Admin Anda
-export REPO_TOKEN="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidWlsZCIsInNjb3BlIjpbImJ1aWxkIiwicHVibGlzaCIsInVwbG9hZCJdLCJuYW1lIjoiYWRtaW4iLCJwcmVmaXhlcyI6WyJjb20ucGVucy5DYWxjdWxhdG9yIl0sInJlcG9zIjpbInN0YWJsZSJdLCJleHAiOjE3OTcyMTk0ODIsInRva2VuX3R5cGUiOiJhcHAiLCJicmFuY2hlcyI6WyJzdGFibGUiXX0.9eN9DJXQJpqMbx9BGgnWzVVK-T9ceAbJnAlAM9Rkv4E"
+export REPO_TOKEN="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidWlsZCIsInNjb3BlIjpbImJ1aWxkIiwidXBsb2FkIl0sIm5hbWUiOiJkZXZlbG9wZXIiLCJwcmVmaXhlcyI6WyJjb20ucGVucy5DYWxjdWxhdG9yIl0sInJlcG9zIjpbInN0YWJsZSJdLCJleHAiOjE3OTczMDE2NDYsInRva2VuX3R5cGUiOiJhcHAiLCJicmFuY2hlcyI6WyJzdGFibGUiXX0.xxcHnh3NyqlwniDVabyOJgOWAebBBRqc1DkfNQ7U3C8"
 
 # --- KONFIGURASI APLIKASI ---
 APP_ID="com.pens.Calculator"

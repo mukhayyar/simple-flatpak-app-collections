@@ -2,11 +2,11 @@
 
 # --- KONFIGURASI SERVER ---
 # URL API Flat-manager (Port 8080) - Tanpa nama repo di belakangnya
-SERVER_API_URL="http://172.21.164.231:8080"
+SERVER_API_URL="https://hub.agl-store.cyou"
 REPO_NAME="stable"
 
 # Token Admin Anda
-export REPO_TOKEN="generate_your_admin_token_here"
+export REPO_TOKEN="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidWlsZCIsInNjb3BlIjpbImJ1aWxkIiwidXBsb2FkIl0sIm5hbWUiOiJkZXZlbG9wZXIiLCJwcmVmaXhlcyI6WyJjb20ucGVucy5Qb21vZG9ybyJdLCJyZXBvcyI6WyJzdGFibGUiXSwiZXhwIjoxODAwMjk3NTQxLCJ0b2tlbl90eXBlIjoiYXBwIiwiYnJhbmNoZXMiOlsic3RhYmxlIl19.0pP0Lui8SK7ZZ3iTeG9zTik2BD0GbVa4adCjGdw5hT8"
 
 # --- KONFIGURASI APLIKASI ---
 APP_ID="com.pens.Pomodoro"
@@ -58,7 +58,7 @@ flat-manager-client commit --wait "$BUILD_URL"
 if [ $? -eq 0 ]; then
     echo ""
     echo "✅ UPLOAD SUCCESS!"
-    echo "Download URL (via Port 8000): http://172.21.164.231:8000"
+    echo "Download URL (via Port 8000): https://hub.agl-store.cyou/"
 else
     echo "❌ Commit Failed."
     exit 1

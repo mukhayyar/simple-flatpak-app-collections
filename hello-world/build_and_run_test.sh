@@ -2,11 +2,12 @@
 
 # --- KONFIGURASI SERVER ---
 # URL API Flat-manager (Port 8080) - Tanpa nama repo di belakangnya
-SERVER_API_URL="http://172.21.164.231:8080"
+# SERVER_API_URL="http://172.21.164.231:8080"
+SERVER_API_URL="http://192.227.247.150:8080"
 REPO_NAME="stable"
 
 # Token Admin Anda
-export REPO_TOKEN="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidWlsZCIsInNjb3BlIjpbImJ1aWxkIiwicHVibGlzaCIsInVwbG9hZCJdLCJuYW1lIjoiYWRtaW4iLCJwcmVmaXhlcyI6WyJjb20ucGVucy5IZWxsb1dvcmxkIl0sInJlcG9zIjpbInN0YWJsZSJdLCJleHAiOjE3OTcyMjAxMjIsInRva2VuX3R5cGUiOiJhcHAiLCJicmFuY2hlcyI6WyJzdGFibGUiXX0.tCy3ZvfZGTUIwZLO-3rpI9xGMN37N8CdfaK-AFrJw_A"
+export REPO_TOKEN="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidWlsZCIsInNjb3BlIjpbImJ1aWxkIiwidXBsb2FkIl0sIm5hbWUiOiJhbGljZSIsInByZWZpeGVzIjpbImNvbS5wZW5zLkhlbGxvV29ybGQiXSwicmVwb3MiOlsic3RhYmxlIl0sImV4cCI6MTc5NzI1MzQ1MSwidG9rZW5fdHlwZSI6ImFwcCIsImJyYW5jaGVzIjpbInN0YWJsZSJdfQ.2Y3ll_-F3l_n1POTlEv_3P68YlrfXXlsud4YQedR2e0"
 
 # --- KONFIGURASI APLIKASI ---
 APP_ID="com.pens.HelloWorld"
@@ -58,7 +59,7 @@ flat-manager-client commit --wait "$BUILD_URL"
 if [ $? -eq 0 ]; then
     echo ""
     echo "✅ UPLOAD SUCCESS!"
-    echo "Download URL (via Port 8000): http://172.21.164.231:8000"
+    echo "Download URL (via Port 8000): $SERVER_API_URL"
 else
     echo "❌ Commit Failed."
     exit 1
