@@ -1,0 +1,17 @@
+app-id: com.pens.Notes
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: notes
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=home
+modules:
+  - name: notes
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 notes.py /app/bin/notes
+    sources:
+      - type: file
+        path: notes.py

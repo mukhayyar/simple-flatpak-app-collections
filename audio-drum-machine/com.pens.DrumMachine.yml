@@ -1,0 +1,17 @@
+app-id: com.pens.DrumMachine
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: drum_machine
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
+modules:
+  - name: drum_machine
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 drum_machine.py /app/bin/drum_machine
+    sources:
+      - type: file
+        path: drum_machine.py

@@ -1,0 +1,18 @@
+app-id: com.pens.RadioPlayer
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: radio_player
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
+  - --share=network
+modules:
+  - name: radio_player
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 radio_player.py /app/bin/radio_player
+    sources:
+      - type: file
+        path: radio_player.py

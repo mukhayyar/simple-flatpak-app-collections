@@ -1,0 +1,16 @@
+app-id: com.pens.MemoryMatch
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: memory_match
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: memory_match
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 memory_match.py /app/bin/memory_match
+    sources:
+      - type: file
+        path: memory_match.py

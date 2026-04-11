@@ -1,0 +1,17 @@
+app-id: com.pens.FilePermissions
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: file_permissions
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --device=all
+modules:
+  - name: file_permissions
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 file_permissions.py /app/bin/file_permissions
+    sources:
+      - type: file
+        path: file_permissions.py

@@ -1,0 +1,16 @@
+app-id: com.pens.KeyboardTester
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: keyboard_tester
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: keyboard_tester
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 keyboard_tester.py /app/bin/keyboard_tester
+    sources:
+      - type: file
+        path: keyboard_tester.py

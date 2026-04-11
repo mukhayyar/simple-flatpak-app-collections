@@ -1,0 +1,17 @@
+app-id: com.pens.CurrencyConverter
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: currency_converter
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=network
+modules:
+  - name: currency_converter
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 currency_converter.py /app/bin/currency_converter
+    sources:
+      - type: file
+        path: currency_converter.py

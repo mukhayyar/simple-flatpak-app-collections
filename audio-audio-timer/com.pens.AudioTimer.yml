@@ -1,0 +1,17 @@
+app-id: com.pens.AudioTimer
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: audio_timer
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
+modules:
+  - name: audio_timer
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 audio_timer.py /app/bin/audio_timer
+    sources:
+      - type: file
+        path: audio_timer.py

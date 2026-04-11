@@ -1,0 +1,16 @@
+app-id: com.pens.TypingTutor
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: typing_tutor
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: typing_tutor
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 typing_tutor.py /app/bin/typing_tutor
+    sources:
+      - type: file
+        path: typing_tutor.py

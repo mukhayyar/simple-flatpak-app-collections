@@ -1,0 +1,17 @@
+app-id: com.pens.InvoiceMaker
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: invoice_maker
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=home
+modules:
+  - name: invoice_maker
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 invoice_maker.py /app/bin/invoice_maker
+    sources:
+      - type: file
+        path: invoice_maker.py

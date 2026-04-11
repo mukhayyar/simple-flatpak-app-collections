@@ -1,0 +1,17 @@
+app-id: com.pens.Histogram
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: histogram
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=home
+modules:
+  - name: histogram
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 histogram.py /app/bin/histogram
+    sources:
+      - type: file
+        path: histogram.py

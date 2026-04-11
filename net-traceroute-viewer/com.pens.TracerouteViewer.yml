@@ -1,0 +1,18 @@
+app-id: com.pens.TracerouteViewer
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: traceroute_viewer
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=network
+  - --device=all
+modules:
+  - name: traceroute_viewer
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 traceroute_viewer.py /app/bin/traceroute_viewer
+    sources:
+      - type: file
+        path: traceroute_viewer.py

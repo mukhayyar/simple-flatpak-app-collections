@@ -1,0 +1,16 @@
+app-id: com.pens.ChessClock
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: chess_clock
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: chess_clock
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 chess_clock.py /app/bin/chess_clock
+    sources:
+      - type: file
+        path: chess_clock.py

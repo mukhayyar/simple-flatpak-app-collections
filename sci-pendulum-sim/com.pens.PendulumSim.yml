@@ -1,0 +1,16 @@
+app-id: com.pens.PendulumSim
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: pendulum_sim
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: pendulum_sim
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 pendulum_sim.py /app/bin/pendulum_sim
+    sources:
+      - type: file
+        path: pendulum_sim.py

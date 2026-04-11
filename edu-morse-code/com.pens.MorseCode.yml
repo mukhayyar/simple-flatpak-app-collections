@@ -1,0 +1,17 @@
+app-id: com.pens.MorseCode
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: morse_code
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
+modules:
+  - name: morse_code
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 morse_code.py /app/bin/morse_code
+    sources:
+      - type: file
+        path: morse_code.py

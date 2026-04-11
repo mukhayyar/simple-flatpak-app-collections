@@ -1,0 +1,16 @@
+app-id: com.pens.BarcodeGen
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: barcode_gen
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: barcode_gen
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 barcode_gen.py /app/bin/barcode_gen
+    sources:
+      - type: file
+        path: barcode_gen.py

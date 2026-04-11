@@ -1,0 +1,19 @@
+app-id: com.pens.NetworkMonitor
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: network_monitor
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=network
+  - --filesystem=/proc:ro
+  - --device=all
+modules:
+  - name: network_monitor
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 network_monitor.py /app/bin/network_monitor
+    sources:
+      - type: file
+        path: network_monitor.py

@@ -1,0 +1,16 @@
+app-id: com.pens.LocaleInfo
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: locale_info
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: locale_info
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 locale_info.py /app/bin/locale_info
+    sources:
+      - type: file
+        path: locale_info.py

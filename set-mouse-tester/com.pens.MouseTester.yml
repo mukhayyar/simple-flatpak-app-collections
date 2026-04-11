@@ -1,0 +1,16 @@
+app-id: com.pens.MouseTester
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: mouse_tester
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: mouse_tester
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 mouse_tester.py /app/bin/mouse_tester
+    sources:
+      - type: file
+        path: mouse_tester.py

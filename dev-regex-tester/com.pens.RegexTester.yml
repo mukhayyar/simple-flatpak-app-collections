@@ -1,0 +1,16 @@
+app-id: com.pens.RegexTester
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: regex_tester
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: regex_tester
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 regex_tester.py /app/bin/regex_tester
+    sources:
+      - type: file
+        path: regex_tester.py

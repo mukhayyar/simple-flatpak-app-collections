@@ -1,0 +1,17 @@
+app-id: com.pens.DiskUsage
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: disk_usage
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --device=all
+modules:
+  - name: disk_usage
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 disk_usage.py /app/bin/disk_usage
+    sources:
+      - type: file
+        path: disk_usage.py

@@ -1,0 +1,16 @@
+app-id: com.pens.ContrastChecker
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: contrast_checker
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: contrast_checker
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 contrast_checker.py /app/bin/contrast_checker
+    sources:
+      - type: file
+        path: contrast_checker.py

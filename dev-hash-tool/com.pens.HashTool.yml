@@ -1,0 +1,16 @@
+app-id: com.pens.HashTool
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: hash_tool
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: hash_tool
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 hash_tool.py /app/bin/hash_tool
+    sources:
+      - type: file
+        path: hash_tool.py

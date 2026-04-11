@@ -1,0 +1,18 @@
+app-id: com.pens.AudioRecorder
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: audio_recorder
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
+  - --filesystem=home
+modules:
+  - name: audio_recorder
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 audio_recorder.py /app/bin/audio_recorder
+    sources:
+      - type: file
+        path: audio_recorder.py

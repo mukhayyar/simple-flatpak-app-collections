@@ -1,0 +1,17 @@
+app-id: com.pens.SpectrumAnalyzer
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: spectrum_analyzer
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
+modules:
+  - name: spectrum_analyzer
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 spectrum_analyzer.py /app/bin/spectrum_analyzer
+    sources:
+      - type: file
+        path: spectrum_analyzer.py

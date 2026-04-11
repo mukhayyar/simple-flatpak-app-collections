@@ -1,0 +1,17 @@
+app-id: com.pens.PixelEditor
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: pixel_editor
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=home
+modules:
+  - name: pixel_editor
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 pixel_editor.py /app/bin/pixel_editor
+    sources:
+      - type: file
+        path: pixel_editor.py

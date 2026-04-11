@@ -1,0 +1,16 @@
+app-id: com.pens.TextTools
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: text_tools
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: text_tools
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 text_tools.py /app/bin/text_tools
+    sources:
+      - type: file
+        path: text_tools.py

@@ -1,0 +1,16 @@
+app-id: com.pens.Sudoku
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: sudoku
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: sudoku
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 sudoku.py /app/bin/sudoku
+    sources:
+      - type: file
+        path: sudoku.py

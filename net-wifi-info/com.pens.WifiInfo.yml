@@ -1,0 +1,18 @@
+app-id: com.pens.WifiInfo
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: wifi_info
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=network
+  - --device=all
+modules:
+  - name: wifi_info
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 wifi_info.py /app/bin/wifi_info
+    sources:
+      - type: file
+        path: wifi_info.py

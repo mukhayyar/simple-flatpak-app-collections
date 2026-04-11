@@ -1,0 +1,18 @@
+app-id: com.pens.UrlChecker
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: url_checker
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=network
+  - --device=all
+modules:
+  - name: url_checker
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 url_checker.py /app/bin/url_checker
+    sources:
+      - type: file
+        path: url_checker.py

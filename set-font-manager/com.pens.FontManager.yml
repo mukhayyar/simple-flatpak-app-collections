@@ -1,0 +1,16 @@
+app-id: com.pens.FontManager
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: font_manager
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: font_manager
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 font_manager.py /app/bin/font_manager
+    sources:
+      - type: file
+        path: font_manager.py

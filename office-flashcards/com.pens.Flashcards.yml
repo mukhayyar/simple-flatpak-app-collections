@@ -1,0 +1,17 @@
+app-id: com.pens.Flashcards
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: flashcards
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=home
+modules:
+  - name: flashcards
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 flashcards.py /app/bin/flashcards
+    sources:
+      - type: file
+        path: flashcards.py

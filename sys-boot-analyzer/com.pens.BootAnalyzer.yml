@@ -1,0 +1,17 @@
+app-id: com.pens.BootAnalyzer
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: boot_analyzer
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --device=all
+modules:
+  - name: boot_analyzer
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 boot_analyzer.py /app/bin/boot_analyzer
+    sources:
+      - type: file
+        path: boot_analyzer.py

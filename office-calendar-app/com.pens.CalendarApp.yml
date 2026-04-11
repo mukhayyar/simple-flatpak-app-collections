@@ -1,0 +1,17 @@
+app-id: com.pens.CalendarApp
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: calendar_app
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=home
+modules:
+  - name: calendar_app
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 calendar_app.py /app/bin/calendar_app
+    sources:
+      - type: file
+        path: calendar_app.py

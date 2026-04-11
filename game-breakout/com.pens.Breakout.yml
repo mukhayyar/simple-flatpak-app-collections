@@ -1,0 +1,16 @@
+app-id: com.pens.Breakout
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: breakout
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: breakout
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 breakout.py /app/bin/breakout
+    sources:
+      - type: file
+        path: breakout.py

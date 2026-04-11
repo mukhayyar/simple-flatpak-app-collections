@@ -1,0 +1,16 @@
+app-id: com.pens.JwtDecoder
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: jwt_decoder
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: jwt_decoder
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 jwt_decoder.py /app/bin/jwt_decoder
+    sources:
+      - type: file
+        path: jwt_decoder.py

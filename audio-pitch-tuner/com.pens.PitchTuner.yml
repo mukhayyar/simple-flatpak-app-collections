@@ -1,0 +1,17 @@
+app-id: com.pens.PitchTuner
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: pitch_tuner
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
+modules:
+  - name: pitch_tuner
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 pitch_tuner.py /app/bin/pitch_tuner
+    sources:
+      - type: file
+        path: pitch_tuner.py

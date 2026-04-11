@@ -1,0 +1,17 @@
+app-id: com.pens.ContactBook
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: contact_book
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=home
+modules:
+  - name: contact_book
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 contact_book.py /app/bin/contact_book
+    sources:
+      - type: file
+        path: contact_book.py

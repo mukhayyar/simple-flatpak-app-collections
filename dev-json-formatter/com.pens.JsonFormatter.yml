@@ -1,0 +1,16 @@
+app-id: com.pens.JsonFormatter
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: json_formatter
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: json_formatter
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 json_formatter.py /app/bin/json_formatter
+    sources:
+      - type: file
+        path: json_formatter.py

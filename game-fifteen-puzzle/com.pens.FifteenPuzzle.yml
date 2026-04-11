@@ -1,0 +1,17 @@
+app-id: com.pens.FifteenPuzzle
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: fifteen_puzzle
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=home
+modules:
+  - name: fifteen_puzzle
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 fifteen_puzzle.py /app/bin/fifteen_puzzle
+    sources:
+      - type: file
+        path: fifteen_puzzle.py

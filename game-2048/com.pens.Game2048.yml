@@ -1,0 +1,16 @@
+app-id: com.pens.Game2048
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: game_2048
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: game_2048
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 game_2048.py /app/bin/game_2048
+    sources:
+      - type: file
+        path: game_2048.py

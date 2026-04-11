@@ -1,0 +1,17 @@
+app-id: com.pens.ChordFinder
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: chord_finder
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
+modules:
+  - name: chord_finder
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 chord_finder.py /app/bin/chord_finder
+    sources:
+      - type: file
+        path: chord_finder.py

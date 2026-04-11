@@ -1,0 +1,16 @@
+app-id: com.pens.IconBrowser
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: icon_browser
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: icon_browser
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 icon_browser.py /app/bin/icon_browser
+    sources:
+      - type: file
+        path: icon_browser.py

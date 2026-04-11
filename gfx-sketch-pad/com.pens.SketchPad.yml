@@ -1,0 +1,17 @@
+app-id: com.pens.SketchPad
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: sketch_pad
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=home
+modules:
+  - name: sketch_pad
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 sketch_pad.py /app/bin/sketch_pad
+    sources:
+      - type: file
+        path: sketch_pad.py

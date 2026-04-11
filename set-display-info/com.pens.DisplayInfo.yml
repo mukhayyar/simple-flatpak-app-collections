@@ -1,0 +1,16 @@
+app-id: com.pens.DisplayInfo
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: display_info
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: display_info
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 display_info.py /app/bin/display_info
+    sources:
+      - type: file
+        path: display_info.py

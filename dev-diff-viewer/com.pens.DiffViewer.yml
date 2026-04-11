@@ -1,0 +1,16 @@
+app-id: com.pens.DiffViewer
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: diff_viewer
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: diff_viewer
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 diff_viewer.py /app/bin/diff_viewer
+    sources:
+      - type: file
+        path: diff_viewer.py

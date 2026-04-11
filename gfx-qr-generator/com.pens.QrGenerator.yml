@@ -1,0 +1,16 @@
+app-id: com.pens.QrGenerator
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: qr_generator
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: qr_generator
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 qr_generator.py /app/bin/qr_generator
+    sources:
+      - type: file
+        path: qr_generator.py

@@ -1,0 +1,18 @@
+app-id: com.pens.LogViewer
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: log_viewer
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=home
+  - --device=all
+modules:
+  - name: log_viewer
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 log_viewer.py /app/bin/log_viewer
+    sources:
+      - type: file
+        path: log_viewer.py

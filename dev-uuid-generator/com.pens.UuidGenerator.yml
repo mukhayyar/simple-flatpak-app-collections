@@ -1,0 +1,16 @@
+app-id: com.pens.UuidGenerator
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: uuid_generator
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: uuid_generator
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 uuid_generator.py /app/bin/uuid_generator
+    sources:
+      - type: file
+        path: uuid_generator.py

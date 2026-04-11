@@ -1,0 +1,16 @@
+app-id: com.pens.PeriodicTable
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: periodic_table
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: periodic_table
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 periodic_table.py /app/bin/periodic_table
+    sources:
+      - type: file
+        path: periodic_table.py

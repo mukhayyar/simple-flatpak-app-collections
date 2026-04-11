@@ -1,0 +1,16 @@
+app-id: com.pens.WordGuess
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: word_guess
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: word_guess
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 word_guess.py /app/bin/word_guess
+    sources:
+      - type: file
+        path: word_guess.py

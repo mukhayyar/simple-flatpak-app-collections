@@ -1,0 +1,18 @@
+app-id: com.pens.ProcessViewer
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: process_viewer
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=/proc:ro
+  - --device=all
+modules:
+  - name: process_viewer
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 process_viewer.py /app/bin/process_viewer
+    sources:
+      - type: file
+        path: process_viewer.py

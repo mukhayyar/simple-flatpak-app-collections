@@ -1,0 +1,16 @@
+app-id: com.pens.ShortcutRef
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: shortcut_ref
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: shortcut_ref
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 shortcut_ref.py /app/bin/shortcut_ref
+    sources:
+      - type: file
+        path: shortcut_ref.py

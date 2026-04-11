@@ -1,0 +1,17 @@
+app-id: com.pens.ToneGenerator
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: tone_generator
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
+modules:
+  - name: tone_generator
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 tone_generator.py /app/bin/tone_generator
+    sources:
+      - type: file
+        path: tone_generator.py

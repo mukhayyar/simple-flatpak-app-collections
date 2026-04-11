@@ -1,0 +1,16 @@
+app-id: com.pens.HighContrast
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: high_contrast
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: high_contrast
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 high_contrast.py /app/bin/high_contrast
+    sources:
+      - type: file
+        path: high_contrast.py

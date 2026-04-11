@@ -1,0 +1,16 @@
+app-id: com.pens.ClickAssist
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: click_assist
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: click_assist
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 click_assist.py /app/bin/click_assist
+    sources:
+      - type: file
+        path: click_assist.py

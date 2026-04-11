@@ -1,0 +1,17 @@
+app-id: com.pens.ServiceMonitor
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: service_monitor
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --device=all
+modules:
+  - name: service_monitor
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 service_monitor.py /app/bin/service_monitor
+    sources:
+      - type: file
+        path: service_monitor.py
