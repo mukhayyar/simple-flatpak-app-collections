@@ -1,0 +1,18 @@
+app-id: com.pens.MemoryMap
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: memory_map
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=/proc:ro
+  - --device=all
+modules:
+  - name: memory_map
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 memory_map.py /app/bin/memory_map
+    sources:
+      - type: file
+        path: memory_map.py

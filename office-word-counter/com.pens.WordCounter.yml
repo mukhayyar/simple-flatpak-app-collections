@@ -1,0 +1,16 @@
+app-id: com.pens.WordCounter
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: word_counter
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: word_counter
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 word_counter.py /app/bin/word_counter
+    sources:
+      - type: file
+        path: word_counter.py

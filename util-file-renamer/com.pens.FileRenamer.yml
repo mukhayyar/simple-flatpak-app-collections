@@ -1,0 +1,17 @@
+app-id: com.pens.FileRenamer
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: file_renamer
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=home
+modules:
+  - name: file_renamer
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 file_renamer.py /app/bin/file_renamer
+    sources:
+      - type: file
+        path: file_renamer.py

@@ -1,0 +1,16 @@
+app-id: com.pens.AsciiArt
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: ascii_art
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: ascii_art
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 ascii_art.py /app/bin/ascii_art
+    sources:
+      - type: file
+        path: ascii_art.py

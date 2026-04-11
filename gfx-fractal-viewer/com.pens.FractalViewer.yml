@@ -1,0 +1,16 @@
+app-id: com.pens.FractalViewer
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: fractal_viewer
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: fractal_viewer
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 fractal_viewer.py /app/bin/fractal_viewer
+    sources:
+      - type: file
+        path: fractal_viewer.py

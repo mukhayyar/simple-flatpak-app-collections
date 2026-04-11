@@ -1,0 +1,16 @@
+app-id: com.pens.BmiCalculator
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: bmi_calculator
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: bmi_calculator
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 bmi_calculator.py /app/bin/bmi_calculator
+    sources:
+      - type: file
+        path: bmi_calculator.py

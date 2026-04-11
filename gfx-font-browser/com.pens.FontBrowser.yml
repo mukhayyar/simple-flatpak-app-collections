@@ -1,0 +1,16 @@
+app-id: com.pens.FontBrowser
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: font_browser
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: font_browser
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 font_browser.py /app/bin/font_browser
+    sources:
+      - type: file
+        path: font_browser.py

@@ -1,0 +1,16 @@
+app-id: com.pens.DateCalculator
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: date_calculator
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: date_calculator
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 date_calculator.py /app/bin/date_calculator
+    sources:
+      - type: file
+        path: date_calculator.py

@@ -1,0 +1,18 @@
+app-id: com.pens.CpuBenchmark
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: cpu_benchmark
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=/proc:ro
+  - --device=all
+modules:
+  - name: cpu_benchmark
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 cpu_benchmark.py /app/bin/cpu_benchmark
+    sources:
+      - type: file
+        path: cpu_benchmark.py

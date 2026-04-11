@@ -1,0 +1,17 @@
+app-id: com.pens.AlarmClock
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: alarm_clock
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
+modules:
+  - name: alarm_clock
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 alarm_clock.py /app/bin/alarm_clock
+    sources:
+      - type: file
+        path: alarm_clock.py

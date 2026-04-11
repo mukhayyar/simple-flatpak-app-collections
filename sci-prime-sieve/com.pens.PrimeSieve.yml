@@ -1,0 +1,16 @@
+app-id: com.pens.PrimeSieve
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: prime_sieve
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: prime_sieve
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 prime_sieve.py /app/bin/prime_sieve
+    sources:
+      - type: file
+        path: prime_sieve.py

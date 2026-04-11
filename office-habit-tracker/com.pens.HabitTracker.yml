@@ -1,0 +1,17 @@
+app-id: com.pens.HabitTracker
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: habit_tracker
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=home
+modules:
+  - name: habit_tracker
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 habit_tracker.py /app/bin/habit_tracker
+    sources:
+      - type: file
+        path: habit_tracker.py

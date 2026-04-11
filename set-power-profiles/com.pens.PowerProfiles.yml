@@ -1,0 +1,16 @@
+app-id: com.pens.PowerProfiles
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: power_profiles
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: power_profiles
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 power_profiles.py /app/bin/power_profiles
+    sources:
+      - type: file
+        path: power_profiles.py

@@ -1,0 +1,16 @@
+app-id: com.pens.OnScreenKeyboard
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: on_screen_keyboard
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: on_screen_keyboard
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 on_screen_keyboard.py /app/bin/on_screen_keyboard
+    sources:
+      - type: file
+        path: on_screen_keyboard.py

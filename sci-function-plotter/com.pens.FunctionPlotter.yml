@@ -1,0 +1,16 @@
+app-id: com.pens.FunctionPlotter
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: function_plotter
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: function_plotter
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 function_plotter.py /app/bin/function_plotter
+    sources:
+      - type: file
+        path: function_plotter.py

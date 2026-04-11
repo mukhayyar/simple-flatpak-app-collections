@@ -1,0 +1,16 @@
+app-id: com.pens.StatisticsCalc
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: statistics_calc
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: statistics_calc
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 statistics_calc.py /app/bin/statistics_calc
+    sources:
+      - type: file
+        path: statistics_calc.py

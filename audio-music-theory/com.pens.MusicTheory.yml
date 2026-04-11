@@ -1,0 +1,16 @@
+app-id: com.pens.MusicTheory
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: music_theory
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: music_theory
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 music_theory.py /app/bin/music_theory
+    sources:
+      - type: file
+        path: music_theory.py

@@ -1,0 +1,17 @@
+app-id: com.pens.TimeTracker
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: time_tracker
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=home
+modules:
+  - name: time_tracker
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 time_tracker.py /app/bin/time_tracker
+    sources:
+      - type: file
+        path: time_tracker.py

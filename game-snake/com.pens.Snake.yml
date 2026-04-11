@@ -1,0 +1,17 @@
+app-id: com.pens.Snake
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: snake
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=home
+modules:
+  - name: snake
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 snake.py /app/bin/snake
+    sources:
+      - type: file
+        path: snake.py

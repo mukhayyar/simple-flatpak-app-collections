@@ -1,0 +1,16 @@
+app-id: com.pens.RandomTools
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: random_tools
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: random_tools
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 random_tools.py /app/bin/random_tools
+    sources:
+      - type: file
+        path: random_tools.py

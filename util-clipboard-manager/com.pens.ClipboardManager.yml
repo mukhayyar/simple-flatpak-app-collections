@@ -1,0 +1,16 @@
+app-id: com.pens.ClipboardManager
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: clipboard_manager
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: clipboard_manager
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 clipboard_manager.py /app/bin/clipboard_manager
+    sources:
+      - type: file
+        path: clipboard_manager.py

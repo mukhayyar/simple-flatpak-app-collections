@@ -1,0 +1,16 @@
+app-id: com.pens.WaveSimulator
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: wave_simulator
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: wave_simulator
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 wave_simulator.py /app/bin/wave_simulator
+    sources:
+      - type: file
+        path: wave_simulator.py

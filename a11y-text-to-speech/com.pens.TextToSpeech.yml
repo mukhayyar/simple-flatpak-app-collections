@@ -1,0 +1,17 @@
+app-id: com.pens.TextToSpeech
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: text_to_speech
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
+modules:
+  - name: text_to_speech
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 text_to_speech.py /app/bin/text_to_speech
+    sources:
+      - type: file
+        path: text_to_speech.py

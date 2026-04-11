@@ -1,0 +1,16 @@
+app-id: com.pens.BinaryCounter
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: binary_counter
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: binary_counter
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 binary_counter.py /app/bin/binary_counter
+    sources:
+      - type: file
+        path: binary_counter.py

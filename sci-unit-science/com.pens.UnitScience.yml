@@ -1,0 +1,16 @@
+app-id: com.pens.UnitScience
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: unit_science
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: unit_science
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 unit_science.py /app/bin/unit_science
+    sources:
+      - type: file
+        path: unit_science.py

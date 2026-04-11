@@ -1,0 +1,16 @@
+app-id: com.pens.ScreenMagnifier
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: screen_magnifier
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: screen_magnifier
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 screen_magnifier.py /app/bin/screen_magnifier
+    sources:
+      - type: file
+        path: screen_magnifier.py

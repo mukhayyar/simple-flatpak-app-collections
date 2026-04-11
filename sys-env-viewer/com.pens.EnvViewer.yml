@@ -1,0 +1,17 @@
+app-id: com.pens.EnvViewer
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: env_viewer
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --device=all
+modules:
+  - name: env_viewer
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 env_viewer.py /app/bin/env_viewer
+    sources:
+      - type: file
+        path: env_viewer.py

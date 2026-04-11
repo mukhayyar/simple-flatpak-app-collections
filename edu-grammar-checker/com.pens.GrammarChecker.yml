@@ -1,0 +1,16 @@
+app-id: com.pens.GrammarChecker
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: grammar_checker
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: grammar_checker
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 grammar_checker.py /app/bin/grammar_checker
+    sources:
+      - type: file
+        path: grammar_checker.py

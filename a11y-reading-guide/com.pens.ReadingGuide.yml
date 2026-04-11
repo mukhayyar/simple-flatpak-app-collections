@@ -1,0 +1,16 @@
+app-id: com.pens.ReadingGuide
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: reading_guide
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: reading_guide
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 reading_guide.py /app/bin/reading_guide
+    sources:
+      - type: file
+        path: reading_guide.py

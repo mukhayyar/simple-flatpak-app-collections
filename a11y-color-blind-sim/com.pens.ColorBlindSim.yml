@@ -1,0 +1,16 @@
+app-id: com.pens.ColorBlindSim
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: color_blind_sim
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: color_blind_sim
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 color_blind_sim.py /app/bin/color_blind_sim
+    sources:
+      - type: file
+        path: color_blind_sim.py

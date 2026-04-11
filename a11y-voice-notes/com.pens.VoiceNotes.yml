@@ -1,0 +1,18 @@
+app-id: com.pens.VoiceNotes
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: voice_notes
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
+  - --filesystem=home
+modules:
+  - name: voice_notes
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 voice_notes.py /app/bin/voice_notes
+    sources:
+      - type: file
+        path: voice_notes.py

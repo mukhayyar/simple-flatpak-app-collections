@@ -1,0 +1,16 @@
+app-id: com.pens.BaseConverter
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: base_converter
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: base_converter
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 base_converter.py /app/bin/base_converter
+    sources:
+      - type: file
+        path: base_converter.py

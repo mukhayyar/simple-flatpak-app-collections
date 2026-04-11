@@ -1,0 +1,16 @@
+app-id: com.pens.LogicGates
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: logic_gates
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: logic_gates
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 logic_gates.py /app/bin/logic_gates
+    sources:
+      - type: file
+        path: logic_gates.py

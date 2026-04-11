@@ -1,0 +1,16 @@
+app-id: com.pens.MatrixCalc
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: matrix_calc
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: matrix_calc
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 matrix_calc.py /app/bin/matrix_calc
+    sources:
+      - type: file
+        path: matrix_calc.py

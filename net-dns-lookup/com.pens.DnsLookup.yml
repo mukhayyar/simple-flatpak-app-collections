@@ -1,0 +1,18 @@
+app-id: com.pens.DnsLookup
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: dns_lookup
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=network
+  - --device=all
+modules:
+  - name: dns_lookup
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 dns_lookup.py /app/bin/dns_lookup
+    sources:
+      - type: file
+        path: dns_lookup.py

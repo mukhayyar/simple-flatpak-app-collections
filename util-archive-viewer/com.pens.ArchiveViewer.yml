@@ -1,0 +1,17 @@
+app-id: com.pens.ArchiveViewer
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: archive_viewer
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=home
+modules:
+  - name: archive_viewer
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 archive_viewer.py /app/bin/archive_viewer
+    sources:
+      - type: file
+        path: archive_viewer.py

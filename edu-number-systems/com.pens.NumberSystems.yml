@@ -1,0 +1,16 @@
+app-id: com.pens.NumberSystems
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: number_systems
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: number_systems
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 number_systems.py /app/bin/number_systems
+    sources:
+      - type: file
+        path: number_systems.py

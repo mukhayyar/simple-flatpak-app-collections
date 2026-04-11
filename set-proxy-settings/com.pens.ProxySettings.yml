@@ -1,0 +1,16 @@
+app-id: com.pens.ProxySettings
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: proxy_settings
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: proxy_settings
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 proxy_settings.py /app/bin/proxy_settings
+    sources:
+      - type: file
+        path: proxy_settings.py

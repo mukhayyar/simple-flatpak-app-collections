@@ -1,0 +1,17 @@
+app-id: com.pens.StartupManager
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: startup_manager
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --device=all
+modules:
+  - name: startup_manager
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 startup_manager.py /app/bin/startup_manager
+    sources:
+      - type: file
+        path: startup_manager.py

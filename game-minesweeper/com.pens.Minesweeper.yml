@@ -1,0 +1,16 @@
+app-id: com.pens.Minesweeper
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: minesweeper
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: minesweeper
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 minesweeper.py /app/bin/minesweeper
+    sources:
+      - type: file
+        path: minesweeper.py

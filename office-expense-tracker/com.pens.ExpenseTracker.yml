@@ -1,0 +1,17 @@
+app-id: com.pens.ExpenseTracker
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: expense_tracker
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=home
+modules:
+  - name: expense_tracker
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 expense_tracker.py /app/bin/expense_tracker
+    sources:
+      - type: file
+        path: expense_tracker.py

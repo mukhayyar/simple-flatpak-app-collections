@@ -1,0 +1,16 @@
+app-id: com.pens.Stopwatch
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: stopwatch
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: stopwatch
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 stopwatch.py /app/bin/stopwatch
+    sources:
+      - type: file
+        path: stopwatch.py

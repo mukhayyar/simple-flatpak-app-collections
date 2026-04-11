@@ -1,0 +1,16 @@
+app-id: com.pens.ThemeSwitcher
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: theme_switcher
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: theme_switcher
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 theme_switcher.py /app/bin/theme_switcher
+    sources:
+      - type: file
+        path: theme_switcher.py

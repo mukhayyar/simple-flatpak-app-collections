@@ -1,0 +1,17 @@
+app-id: com.pens.Metronome
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: metronome
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
+modules:
+  - name: metronome
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 metronome.py /app/bin/metronome
+    sources:
+      - type: file
+        path: metronome.py

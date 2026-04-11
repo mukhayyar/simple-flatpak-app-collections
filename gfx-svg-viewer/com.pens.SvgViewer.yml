@@ -1,0 +1,17 @@
+app-id: com.pens.SvgViewer
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: svg_viewer
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --filesystem=home
+modules:
+  - name: svg_viewer
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 svg_viewer.py /app/bin/svg_viewer
+    sources:
+      - type: file
+        path: svg_viewer.py

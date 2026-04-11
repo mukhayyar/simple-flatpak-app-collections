@@ -1,0 +1,16 @@
+app-id: com.pens.LanguageFlash
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: language_flash
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: language_flash
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 language_flash.py /app/bin/language_flash
+    sources:
+      - type: file
+        path: language_flash.py

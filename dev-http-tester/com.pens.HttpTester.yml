@@ -1,0 +1,17 @@
+app-id: com.pens.HttpTester
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: http_tester
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=network
+modules:
+  - name: http_tester
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 http_tester.py /app/bin/http_tester
+    sources:
+      - type: file
+        path: http_tester.py

@@ -1,0 +1,18 @@
+app-id: com.pens.PortScanner
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: port_scanner
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=network
+  - --device=all
+modules:
+  - name: port_scanner
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 port_scanner.py /app/bin/port_scanner
+    sources:
+      - type: file
+        path: port_scanner.py

@@ -1,0 +1,16 @@
+app-id: com.pens.TimezoneWorld
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: timezone_world
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: timezone_world
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 timezone_world.py /app/bin/timezone_world
+    sources:
+      - type: file
+        path: timezone_world.py

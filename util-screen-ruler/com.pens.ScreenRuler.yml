@@ -1,0 +1,16 @@
+app-id: com.pens.ScreenRuler
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: screen_ruler
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: screen_ruler
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 screen_ruler.py /app/bin/screen_ruler
+    sources:
+      - type: file
+        path: screen_ruler.py

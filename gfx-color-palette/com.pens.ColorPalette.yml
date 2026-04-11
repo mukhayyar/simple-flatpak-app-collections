@@ -1,0 +1,16 @@
+app-id: com.pens.ColorPalette
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: color_palette
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: color_palette
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 color_palette.py /app/bin/color_palette
+    sources:
+      - type: file
+        path: color_palette.py
