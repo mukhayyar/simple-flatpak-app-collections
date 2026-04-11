@@ -1,0 +1,24 @@
+app-id: com.pens.WeatherViewer
+runtime: org.gnome.Platform
+runtime-version: '45'
+build-commit-tag: '1.0.0'
+sdk: org.gnome.Sdk
+command: weather_viewer.py
+finish-args:
+  # Windowing system access
+  - --socket=wayland
+  - --socket=fallback-x11
+  # Audio access (standard for GUI apps)
+  - --socket=pulseaudio
+  # Network access needed to fetch weather from wttr.in
+  - --share=network
+
+modules:
+  - name: weather-viewer
+    sources:
+      - type: file
+        path: weather_viewer.py
+    buildsystem: simple
+    build-commands:
+      - install -D weather_viewer.py /app/bin/weather_viewer.py
+      - chmod +x /app/bin/weather_viewer.py

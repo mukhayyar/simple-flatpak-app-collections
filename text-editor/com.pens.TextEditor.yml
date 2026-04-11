@@ -1,0 +1,24 @@
+app-id: com.pens.TextEditor
+runtime: org.gnome.Platform
+runtime-version: '45'
+build-commit-tag: '1.0.0'
+sdk: org.gnome.Sdk
+command: text_editor.py
+finish-args:
+  # Windowing system access
+  - --socket=wayland
+  - --socket=fallback-x11
+  # Audio access (standard for GUI apps)
+  - --socket=pulseaudio
+  # Filesystem access needed to open/save files
+  - --filesystem=home
+
+modules:
+  - name: text-editor
+    sources:
+      - type: file
+        path: text_editor.py
+    buildsystem: simple
+    build-commands:
+      - install -D text_editor.py /app/bin/text_editor.py
+      - chmod +x /app/bin/text_editor.py

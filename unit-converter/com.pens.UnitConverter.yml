@@ -1,0 +1,23 @@
+app-id: com.pens.UnitConverter
+runtime: org.gnome.Platform
+runtime-version: '45'
+build-commit-tag: '1.0.0'
+sdk: org.gnome.Sdk
+command: unit_converter.py
+finish-args:
+  # Windowing system access
+  - --socket=wayland
+  - --socket=fallback-x11
+  # Audio access (standard for GUI apps)
+  - --socket=pulseaudio
+  # No network needed for unit conversion
+
+modules:
+  - name: unit-converter
+    sources:
+      - type: file
+        path: unit_converter.py
+    buildsystem: simple
+    build-commands:
+      - install -D unit_converter.py /app/bin/unit_converter.py
+      - chmod +x /app/bin/unit_converter.py
