@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Morse Code" \
   --summary  "Morse Code application for AGL Store" \
   --category "Education" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

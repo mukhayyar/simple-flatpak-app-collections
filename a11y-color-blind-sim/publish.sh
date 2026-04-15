@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Color Blind Sim" \
   --summary  "Color Blind Sim application for AGL Store" \
   --category "Accessibility" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

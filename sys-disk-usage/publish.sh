@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Disk Usage" \
   --summary  "Disk Usage application for AGL Store" \
   --category "System" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

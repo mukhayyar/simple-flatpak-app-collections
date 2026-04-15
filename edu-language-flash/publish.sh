@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Language Flash" \
   --summary  "Language Flash application for AGL Store" \
   --category "Education" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

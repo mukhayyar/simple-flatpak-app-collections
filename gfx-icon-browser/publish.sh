@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Icon Browser" \
   --summary  "Icon Browser application for AGL Store" \
   --category "Graphics" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

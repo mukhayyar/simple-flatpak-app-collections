@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Wave Simulator" \
   --summary  "Wave Simulator application for AGL Store" \
   --category "Science" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

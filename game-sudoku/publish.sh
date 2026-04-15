@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Sudoku" \
   --summary  "Sudoku application for AGL Store" \
   --category "Game" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

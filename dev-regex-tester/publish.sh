@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Regex Tester" \
   --summary  "Regex Tester application for AGL Store" \
   --category "Development" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

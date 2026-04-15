@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Url Checker" \
   --summary  "Url Checker application for AGL Store" \
   --category "Network" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

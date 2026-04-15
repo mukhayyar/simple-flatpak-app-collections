@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Minesweeper" \
   --summary  "Minesweeper application for AGL Store" \
   --category "Game" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

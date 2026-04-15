@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Archive Viewer" \
   --summary  "Archive Viewer application for AGL Store" \
   --category "Utility" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

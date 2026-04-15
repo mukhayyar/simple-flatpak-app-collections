@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Locale Info" \
   --summary  "Locale Info application for AGL Store" \
   --category "Settings" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

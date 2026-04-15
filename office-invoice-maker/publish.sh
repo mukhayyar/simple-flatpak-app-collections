@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Invoice Maker" \
   --summary  "Invoice Maker application for AGL Store" \
   --category "Office" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

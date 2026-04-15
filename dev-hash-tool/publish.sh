@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Hash Tool" \
   --summary  "Hash Tool application for AGL Store" \
   --category "Development" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

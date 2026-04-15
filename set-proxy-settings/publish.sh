@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Proxy Settings" \
   --summary  "Proxy Settings application for AGL Store" \
   --category "Settings" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

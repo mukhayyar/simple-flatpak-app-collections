@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Memory Match" \
   --summary  "Memory Match application for AGL Store" \
   --category "Game" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

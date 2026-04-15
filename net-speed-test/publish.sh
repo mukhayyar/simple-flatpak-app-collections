@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Speed Test" \
   --summary  "Speed Test application for AGL Store" \
   --category "Network" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

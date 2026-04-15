@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Socket Tester" \
   --summary  "Socket Tester application for AGL Store" \
   --category "Network" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

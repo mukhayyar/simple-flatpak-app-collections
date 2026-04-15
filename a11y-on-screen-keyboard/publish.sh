@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "On Screen Keyboard" \
   --summary  "On Screen Keyboard application for AGL Store" \
   --category "Accessibility" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

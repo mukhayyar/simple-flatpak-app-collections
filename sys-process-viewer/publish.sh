@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Process Viewer" \
   --summary  "Process Viewer application for AGL Store" \
   --category "System" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

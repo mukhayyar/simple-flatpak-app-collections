@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Typing Tutor" \
   --summary  "Typing Tutor application for AGL Store" \
   --category "Education" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Game2048" \
   --summary  "Game2048 application for AGL Store" \
   --category "Game" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

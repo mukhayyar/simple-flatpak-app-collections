@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Power Profiles" \
   --summary  "Power Profiles application for AGL Store" \
   --category "Settings" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

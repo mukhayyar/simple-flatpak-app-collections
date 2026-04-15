@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Keyboard Tester" \
   --summary  "Keyboard Tester application for AGL Store" \
   --category "Settings" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Log Viewer" \
   --summary  "Log Viewer application for AGL Store" \
   --category "System" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

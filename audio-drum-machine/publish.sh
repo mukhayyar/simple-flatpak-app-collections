@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Drum Machine" \
   --summary  "Drum Machine application for AGL Store" \
   --category "AudioVideo" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

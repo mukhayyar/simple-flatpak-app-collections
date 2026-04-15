@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Font Size Tool" \
   --summary  "Font Size Tool application for AGL Store" \
   --category "Accessibility" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

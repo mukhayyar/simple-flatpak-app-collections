@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Periodic Table" \
   --summary  "Periodic Table application for AGL Store" \
   --category "Education" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch
