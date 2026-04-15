@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Tone Generator" \
   --summary  "Tone Generator application for AGL Store" \
   --category "AudioVideo" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

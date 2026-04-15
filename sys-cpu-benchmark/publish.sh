@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Cpu Benchmark" \
   --summary  "Cpu Benchmark application for AGL Store" \
   --category "System" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Contact Book" \
   --summary  "Contact Book application for AGL Store" \
   --category "Office" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

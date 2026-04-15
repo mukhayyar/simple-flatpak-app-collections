@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Pixel Editor" \
   --summary  "Pixel Editor application for AGL Store" \
   --category "Graphics" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

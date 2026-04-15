@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Calendar App" \
   --summary  "Calendar App application for AGL Store" \
   --category "Office" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

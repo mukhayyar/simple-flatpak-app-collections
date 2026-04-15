@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Weather Viewer" \
   --summary  "Weather Viewer application for AGL Store" \
   --category "Utility" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

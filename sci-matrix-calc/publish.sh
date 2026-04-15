@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Matrix Calc" \
   --summary  "Matrix Calc application for AGL Store" \
   --category "Science" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

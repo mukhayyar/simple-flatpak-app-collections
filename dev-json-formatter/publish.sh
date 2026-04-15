@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Json Formatter" \
   --summary  "Json Formatter application for AGL Store" \
   --category "Development" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

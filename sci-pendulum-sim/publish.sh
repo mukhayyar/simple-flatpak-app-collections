@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Pendulum Sim" \
   --summary  "Pendulum Sim application for AGL Store" \
   --category "Science" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

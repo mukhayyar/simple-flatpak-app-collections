@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Diff Viewer" \
   --summary  "Diff Viewer application for AGL Store" \
   --category "Development" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

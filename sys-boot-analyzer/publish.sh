@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Boot Analyzer" \
   --summary  "Boot Analyzer application for AGL Store" \
   --category "System" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

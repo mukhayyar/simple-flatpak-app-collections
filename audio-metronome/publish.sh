@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Metronome" \
   --summary  "Metronome application for AGL Store" \
   --category "AudioVideo" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

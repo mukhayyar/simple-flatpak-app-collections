@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Barcode Gen" \
   --summary  "Barcode Gen application for AGL Store" \
   --category "Utility" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

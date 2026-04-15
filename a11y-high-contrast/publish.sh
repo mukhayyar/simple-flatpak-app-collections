@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "High Contrast" \
   --summary  "High Contrast application for AGL Store" \
   --category "Accessibility" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

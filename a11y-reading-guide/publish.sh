@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Reading Guide" \
   --summary  "Reading Guide application for AGL Store" \
   --category "Accessibility" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

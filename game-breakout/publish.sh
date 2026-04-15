@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Breakout" \
   --summary  "Breakout application for AGL Store" \
   --category "Game" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

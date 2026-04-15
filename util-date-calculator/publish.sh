@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Date Calculator" \
   --summary  "Date Calculator application for AGL Store" \
   --category "Utility" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

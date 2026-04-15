@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Ascii Art" \
   --summary  "Ascii Art application for AGL Store" \
   --category "Development" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch

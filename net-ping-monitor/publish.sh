@@ -43,4 +43,5 @@ cd "$SCRIPT_DIR"
   --name     "Ping Monitor" \
   --summary  "Ping Monitor application for AGL Store" \
   --category "Network" \
-  --repo     ./flatpak_repo
+  --repo     ./flatpak_repo \
+  --multi-arch
