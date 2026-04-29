@@ -1,0 +1,19 @@
+app-id: com.pens.IVIVehicleDashboard
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: ivi_dashboard.py
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=ipc
+
+modules:
+  - name: ivi-vehicle-dashboard
+    buildsystem: simple
+    sources:
+      - type: file
+        path: ivi_dashboard.py
+    build-commands:
+      - install -D ivi_dashboard.py /app/bin/ivi_dashboard.py
+      - chmod +x /app/bin/ivi_dashboard.py
