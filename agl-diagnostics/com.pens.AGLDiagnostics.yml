@@ -1,0 +1,21 @@
+app-id: com.pens.AGLDiagnostics
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: agl_diagnostics.py
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=ipc
+  - --filesystem=/proc:ro
+  - --filesystem=/sys/class/net:ro
+
+modules:
+  - name: agl-diagnostics
+    buildsystem: simple
+    sources:
+      - type: file
+        path: agl_diagnostics.py
+    build-commands:
+      - install -D agl_diagnostics.py /app/bin/agl_diagnostics.py
+      - chmod +x /app/bin/agl_diagnostics.py
