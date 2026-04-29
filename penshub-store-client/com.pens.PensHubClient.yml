@@ -1,0 +1,20 @@
+app-id: com.pens.PensHubClient
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: penshub_client.py
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=ipc
+  - --share=network
+
+modules:
+  - name: penshub-store-client
+    buildsystem: simple
+    sources:
+      - type: file
+        path: penshub_client.py
+    build-commands:
+      - install -D penshub_client.py /app/bin/penshub_client.py
+      - chmod +x /app/bin/penshub_client.py
