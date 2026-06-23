@@ -1,0 +1,20 @@
+app-id: com.thesis.BlockApp
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: block_app
+finish-args:
+  - --filesystem=host
+  - --device=all
+  - --talk-name=org.freedesktop.flatpak
+modules:
+  - name: block_app
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 block_app.py /app/bin/block_app
+      - install -Dm644 test.dat /app/share/com.thesis.BlockApp/test.dat
+    sources:
+      - type: file
+        path: block_app.py
+      - type: file
+        path: test.dat
