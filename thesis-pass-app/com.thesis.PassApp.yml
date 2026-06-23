@@ -1,0 +1,15 @@
+app-id: com.thesis.PassApp
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: pass_app
+finish-args:
+  - --socket=wayland
+modules:
+  - name: pass_app
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 pass_app.py /app/bin/pass_app
+    sources:
+      - type: file
+        path: pass_app.py
