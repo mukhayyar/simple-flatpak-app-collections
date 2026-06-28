@@ -3,3 +3,28 @@
 flatpak_build/
 flatpak_repo/
 repo_temp/
+repo/
+my-repo/
+build-dir/
+
+# Flatpak bundles
+*.flatpak
+
+# Developer signing key (SECRET — never commit)
+agl-signing-key.gpg
+
+# Credentials / account pool (SECRET — never commit). See .env.example for the template.
+.env
+
+# Certs / keys
+*.pem
+# ...except the public hub CA bundle, which auto-run.sh needs and has no secrets
+!agl-hub-ca-bundle.pem
+
+# Batch publish logs & results (transient session artifacts)
+*.log
+batch*-results.tsv
+
+# Python bytecode cache
+__pycache__/
+*.pyc

@@ -1,0 +1,17 @@
+app-id: com.pens.MarkdownPreview
+runtime: org.gnome.Platform
+runtime-version: '45'
+build-commit-tag: '1.0.0'
+sdk: org.gnome.Sdk
+command: markdown_preview
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: markdown_preview
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 markdown_preview.py /app/bin/markdown_preview
+    sources:
+      - type: file
+        path: markdown_preview.py

@@ -1,0 +1,17 @@
+app-id: com.pens.MacLookup
+runtime: org.gnome.Platform
+runtime-version: '45'
+build-commit-tag: '1.0.0'
+sdk: org.gnome.Sdk
+command: mac_lookup
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: mac_lookup
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 mac_lookup.py /app/bin/mac_lookup
+    sources:
+      - type: file
+        path: mac_lookup.py

@@ -1,0 +1,17 @@
+app-id: com.pens.QuadraticSolver
+runtime: org.gnome.Platform
+runtime-version: '45'
+build-commit-tag: '1.0.0'
+sdk: org.gnome.Sdk
+command: quadratic_solver
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: quadratic_solver
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 quadratic_solver.py /app/bin/quadratic_solver
+    sources:
+      - type: file
+        path: quadratic_solver.py

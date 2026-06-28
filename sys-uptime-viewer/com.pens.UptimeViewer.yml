@@ -1,0 +1,17 @@
+app-id: com.pens.UptimeViewer
+runtime: org.gnome.Platform
+runtime-version: '45'
+build-commit-tag: '1.0.0'
+sdk: org.gnome.Sdk
+command: uptime_viewer
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: uptime_viewer
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 uptime_viewer.py /app/bin/uptime_viewer
+    sources:
+      - type: file
+        path: uptime_viewer.py

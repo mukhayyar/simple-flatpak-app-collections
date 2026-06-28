@@ -1,0 +1,17 @@
+app-id: com.pens.RockPaperScissors
+runtime: org.gnome.Platform
+runtime-version: '45'
+build-commit-tag: '1.0.0'
+sdk: org.gnome.Sdk
+command: rock_paper_scissors
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: rock_paper_scissors
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 rock_paper_scissors.py /app/bin/rock_paper_scissors
+    sources:
+      - type: file
+        path: rock_paper_scissors.py

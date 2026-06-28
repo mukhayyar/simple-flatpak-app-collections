@@ -1,0 +1,17 @@
+app-id: com.pens.TipCalculator
+runtime: org.gnome.Platform
+runtime-version: '45'
+build-commit-tag: '1.0.0'
+sdk: org.gnome.Sdk
+command: tip_calculator
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: tip_calculator
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 tip_calculator.py /app/bin/tip_calculator
+    sources:
+      - type: file
+        path: tip_calculator.py

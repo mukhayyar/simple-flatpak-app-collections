@@ -1,0 +1,17 @@
+app-id: com.pens.AgeCalculator
+runtime: org.gnome.Platform
+runtime-version: '45'
+build-commit-tag: '1.0.0'
+sdk: org.gnome.Sdk
+command: age_calculator
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: age_calculator
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 age_calculator.py /app/bin/age_calculator
+    sources:
+      - type: file
+        path: age_calculator.py

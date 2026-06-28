@@ -1,0 +1,17 @@
+app-id: com.pens.GradientGenerator
+runtime: org.gnome.Platform
+runtime-version: '45'
+build-commit-tag: '1.0.0'
+sdk: org.gnome.Sdk
+command: gradient_generator
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+modules:
+  - name: gradient_generator
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 gradient_generator.py /app/bin/gradient_generator
+    sources:
+      - type: file
+        path: gradient_generator.py
